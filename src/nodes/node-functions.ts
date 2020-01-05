@@ -17,3 +17,13 @@ export const createElementNode = (parent: XMLElement, elemData: ElementData): XM
         minOccurs: elemData.minOccurs !== undefined ? elemData.minOccurs : undefined,
         maxOccurs: elemData.maxOccurs ? elemData.maxOccurs : undefined
     }).up();
+
+export const createSequenceNode = (parent: XMLElement): XMLElement => parent
+    .ele('xs:sequence');
+
+export const closeSequenceNode = (seqNode: XMLElement): XMLElement => seqNode.up();
+
+export const createComplexTypeNode = (parent: XMLElement, name: string): XMLElement => parent
+    .ele('xs:complexType', {name: name});
+
+export const closeComplexTypeNode = (complexNode: XMLElement): XMLElement => complexNode.up();
