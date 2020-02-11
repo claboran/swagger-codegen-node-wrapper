@@ -11,7 +11,7 @@
     "build-bundle": "rimraf build && webpack && mkdir build/jar && cp jar/swagger-codegen-cli-2.4.12.jar build/jar/swagger-codegen-cli-2.4.12.jar"
   },
   "keywords": [],
-  "author": "",
+  "author": "Christian Laboranowitsch",
   "license": "Apache 2.0",
   "devDependencies": {
     "@types/jest": "^24.0.25",
