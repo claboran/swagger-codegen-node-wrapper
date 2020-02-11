@@ -1,15 +1,14 @@
 {
-  "name": "openapi2schema",
+  "name": "swagger-codegen-node-wrapper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A node wrapper for swagger codegen",
+  "main": "swagger-codegen-node-wrapper.js",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon --exec ts-node src/index.ts --watch src -- --input hello.js",
+    "dev": "nodemon --exec ts-node index.ts --watch . -- --input http://petstore.swagger.io/v2/swagger.json --language apex --outdir ../out",
     "test": "jest --watchAll",
     "coverage": "jest --coverage",
-    "build-bundle": "webpack"
+    "build-bundle": "rimraf build && webpack && mkdir build/jar && cp jar/swagger-codegen-cli-2.4.12.jar build/jar/swagger-codegen-cli-2.4.12.jar"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +27,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
     "commander": "^4.0.1",
     "xmlbuilder": "^13.0.2"
   }
